@@ -19,7 +19,7 @@ float sumaG(int personas, float volP[], int ratio){ //volP será volúmen de caf
 
 //utilización final
 int main (){
-    int n, res, num1, ratio;
+    int n, res, num1, ratio, sumV=0;
     cout<<"Cuantas personas desean cafe?" << endl;
     cin>>n;
 
@@ -42,10 +42,12 @@ int main (){
      for (int i=1; i<n; i++){
          cout<<"la siguiente? (ml)" << endl;
         cin>>volP[i];
+        sumV=sumV+volP[i];
      }
-      
+    
+  
     res = sumaG(n,volP,ratio);
-    cout << "Serian " << res << " gramos en total!" << endl;
+    cout << "Serian " << res << " gramos y " << round(sumV) << " ml en total!!" << endl;
     cout << "Disfrute su cafe!!"<<endl;
     
     return 0;
